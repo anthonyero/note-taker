@@ -1,6 +1,1 @@
-[
-    {
-        "title":"Test Title",
-        "text":"Test text"
-    }
-]
+[{"title":"`JSON.stringify()`","text":"Ensure that you utilize `JSON.stringify()` to write the newly appended array object to the file `db.json` using the `writeFile()` method","id":"828ffee9-f742-42fb-86f6-03a4d47fec2e"},{"title":"`UUID` npm package","text":"The `UUID` package can be utilized to generate unique ids for each note ","id":"ca3de065-57c7-4b4f-ad67-c5bfc56a0757"}]
