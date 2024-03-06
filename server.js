@@ -9,7 +9,7 @@ const app = express();
 
 // Middleware
 app.use(express.static('public'));
-app.use(express.json())
+app.use(express.json()) 
 
 
 // GET Route for the homepage
@@ -39,15 +39,18 @@ app.post('/api/notes', (req, res) => {
         };
 
         // Appends newNote object to existing notesData
+        // console.info(notesData);/
+        // console.info(typeof notesData); // Data is an object (array)
         notesData.push(newNote);
+        // console.info(notesData);
         // Convert newNote object to a string
-        let updatedDataString = JSON.parse(notesData);
+        let updatedDataString = JSON.stringify(notesData);
 
         fs.writeFile('./db/db.json', updatedDataString, (err) => 
             err
             ? console.error(err)
             : console.log(
-                `${newNote} has been written to JSON file`
+                `${JSON.stringify(newNote)} has been written to JSON file` // Stringify to view the actual value in the console. Otherwise, it's "object object"
               ) 
         );
         
