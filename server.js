@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const UUID = require('uuid'); // Utilized to generate a note id
-const fs = require('fs'); // 
+const fs = require('fs'); // Imported to use the writeFile method
 const notesData = require('./db/db.json')
 const PORT = 3001;
 
@@ -9,7 +9,7 @@ const app = express();
 
 // Middleware
 app.use(express.static('public'));
-app.use(express.json()) 
+app.use(express.json())  // Required to access the request body. This is the JSON middleware
 
 
 // GET Route for the homepage
