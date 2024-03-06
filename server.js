@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
-
-const PORT = process.env.PORT || 3001;
+const notesData = require('./db/db.json')
+const PORT = 3001;
 
 const app = express();
 
@@ -18,7 +18,13 @@ app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/notes.html'))
 });
 
-    // GET wildcard route
+// API Routes
+    // API GET route to retrieve notes
+app.get('/api/notes', (req, res) => res.json(notesData));
+
+
+
+// GET wildcard route
 app.get('*', (req, res) => 
     res.sendFile(path.join(__dirname, '/public/index.html'))
 );
